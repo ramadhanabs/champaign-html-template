@@ -10,12 +10,196 @@
     <link rel="stylesheet" href="css/main.css" />
   </head>
 
-  <body class="py-16 bg-gray-200">
-    <h1 class="mb-4 text-4xl text-center text-gray-800 font-bold font-sans">
-      Tailwind CSS Boilerplate
-    </h1>
-    <p class="text-sm text-center text-gray-600 font-sans">
-      Get started by editing index.html
-    </p>
+  <body class="bg-primary-purple">
+    <sidebar class="fixed left-0 top-0 w-[260px] h-full px-[24px] py-[40px]">
+      <div class="h-full flex flex-col">
+        <div class="flex justify-between items-center">
+          <img src="/src/img/logo/logo-champaign.svg" alt="logo-champaign" />
+          <button>
+            <img src="/src/img/icons/chevron-right.svg" class="w-8 h-8" alt="chevron-right" />
+          </button>
+        </div>
+        <hr class="my-6 opacity-50" />
+        <div>
+          <a class="p-4 flex items-center cursor-pointer gap-4 menu-active rounded-xl" href="/">
+            <img src="./img/icons/home-purple.svg" />
+            <p class="paragraph-semibold-caption">Home</p>
+          </a>
+          <a
+            class="p-4 flex items-center cursor-pointer gap-4 hover:bg-purple-600 animate-ease rounded-xl"
+            href="/ai-reports"
+          >
+            <img src="./img/icons/rocket-white.svg" />
+            <p class="paragraph-semibold-caption text-white">Ai Reports</p>
+          </a>
+          <a
+            class="p-4 flex items-center cursor-pointer gap-4 hover:bg-purple-600 animate-ease rounded-xl"
+            href="/performance"
+          >
+            <img src="./img/icons/chart-white.svg" />
+            <p class="paragraph-semibold-caption text-white">Performance</p>
+          </a>
+          <a
+            class="p-4 flex items-center cursor-pointer gap-4 hover:bg-purple-600 animate-ease rounded-xl"
+            href="/clients"
+          >
+            <img src="./img/icons/user-white.svg" />
+            <p class="paragraph-semibold-caption text-white">Clients</p>
+          </a>
+          <a
+            class="p-4 flex items-center cursor-pointer gap-4 hover:bg-purple-600 animate-ease rounded-xl"
+            href="/integrations"
+          >
+            <img src="./img/icons/integration-white.svg" />
+            <p class="paragraph-semibold-caption text-white">Integrations</p>
+          </a>
+          <a
+            class="p-4 flex items-center cursor-pointer gap-4 hover:bg-purple-600 animate-ease rounded-xl"
+            href="/tracking"
+          >
+            <img src="./img/icons/tracking-white.svg" />
+            <p class="paragraph-semibold-caption text-white">Tracking</p>
+          </a>
+        </div>
+        <div class="mt-auto">
+          <a class="p-4 flex items-center cursor-pointer gap-4 rounded-xl" href="/my-account">
+            <img src="./img/dummy-user.png" class="w-6 h-6" />
+            <p class="paragraph-semibold-caption text-white">My Account</p>
+          </a>
+           <a
+            class="p-4 flex items-center cursor-pointer gap-4 hover:bg-purple-600 animate-ease rounded-xl"
+            href="#"
+          >
+            <img src="./img/icons/settings-white.svg" />
+            <p class="paragraph-semibold-caption text-white">Log Out</p>
+          </a>
+        </div>
+      </div>
+    </sidebar>
+
+    <main class="ml-[260px] p-6 h-full">
+      <section
+        class="bg-white max-w-[1440px] rounded-[22px] h-full py-6 px-10 flex flex-col"
+        id="bg-rhino"
+      >
+        <div>
+          <!-- Title -->
+          <div class="flex justify-between items-center mb-8">
+            <h1 class="heading-bold-5 text-grayscale-100">Homepage</h1>
+            <img src="/src/img/logo/logo-champaign.png" alt="logo-champaign" class="w-[120px]" />
+          </div>
+
+          <!-- Tab -->
+          <div class="flex items-center gap-4 mb-8">
+            <button
+              class="text-primary bg-white p-4 rounded-xl w-[260px] hover:ring-2 hover:ring-primary ease-in-out duration-200"
+            >
+              <p class="heading-bold-7">Ai Reports</p>
+            </button>
+            <button
+              class="text-primary bg-white p-4 rounded-xl w-[260px] hover:ring-2 hover:ring-primary ease-in-out duration-200"
+            >
+              <p class="heading-bold-7">Performance</p>
+            </button>
+          </div>
+
+          <!-- Revenue This Month -->
+          <p class="heading-bold-6 mb-6">This Month</p>
+          <div class="grid grid-cols-3 gap-6">
+            <!-- Card 1 -->
+            <div class="p-4 bg-white/50 backdrop-blur rounded-xl flex gap-4">
+              <img src="./img/icons/dollar-circle.svg" alt="dollar-circle" />
+              <div>
+                <p class="heading-reguler-6 text-grayscale-90">Revenue</p>
+                <p class="heading-bold-7 text-grayscale-100">$96.000</p>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="p-4 bg-white/50 backdrop-blur rounded-xl flex gap-4">
+              <img src="./img/icons/wallet-circle.svg" alt="wallet-circle" />
+              <div>
+                <p class="heading-reguler-6 text-grayscale-90">Budget</p>
+                <p class="heading-bold-7 text-grayscale-100">$96.000</p>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="p-4 bg-white/50 backdrop-blur rounded-xl flex gap-4">
+              <img src="./img/icons/chart-circle.svg" alt="chart-circle" />
+              <div>
+                <p class="heading-reguler-6 text-grayscale-90">Active Campaigns</p>
+                <p class="heading-bold-7 text-grayscale-100">96</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Alerts -->
+        <div class="mt-auto">
+          <p class="heading-semibold-6 mb-6">Alerts</p>
+          <div class="grid grid-cols-4 gap-4">
+            <!-- Card Alert 1 -->
+            <div
+              class="p-4 bg-white/50 backdrop-blur rounded-xl flex gap-4 items-center justify-between"
+            >
+              <div class="flex items-center gap-3">
+                <img src="./img/logo-mercy.png" class="w-8 h-8" alt="logo-mercy" />
+                <p class="text-grayscale-100 paragraph-medium-caption">Mercedes-Benz</p>
+              </div>
+              <span
+                class="bg-[#F74A4A]/10 p-1 rounded-lg text-[#F74A4A] paragraph-medium-caption flex"
+              >
+                <img src="./img//icons/arrow-top.svg" class="mr-1" />
+                12%
+              </span>
+            </div>
+            <!-- Card Alert 2 -->
+            <div
+              class="p-4 bg-white/50 backdrop-blur rounded-xl flex gap-4 items-center justify-between"
+            >
+              <div class="flex items-center gap-3">
+                <img src="./img/logo-mercy.png" class="w-8 h-8" alt="logo-mercy" />
+                <p class="text-grayscale-100 paragraph-medium-caption">Mercedes-Benz</p>
+              </div>
+              <span
+                class="bg-[#F74A4A]/10 p-1 rounded-lg text-[#F74A4A] paragraph-medium-caption flex"
+              >
+                <img src="./img//icons/arrow-top.svg" class="mr-1" />
+                12%
+              </span>
+            </div>
+            <!-- Card Alert 3 -->
+            <div
+              class="p-4 bg-white/50 backdrop-blur rounded-xl flex gap-4 items-center justify-between"
+            >
+              <div class="flex items-center gap-3">
+                <img src="./img/logo-mercy.png" class="w-8 h-8" alt="logo-mercy" />
+                <p class="text-grayscale-100 paragraph-medium-caption">Mercedes-Benz</p>
+              </div>
+              <span
+                class="bg-[#F74A4A]/10 p-1 rounded-lg text-[#F74A4A] paragraph-medium-caption flex"
+              >
+                <img src="./img//icons/arrow-top.svg" class="mr-1" />
+                12%
+              </span>
+            </div>
+            <!-- Card Alert 4 -->
+            <div
+              class="p-4 bg-white/50 backdrop-blur rounded-xl flex gap-4 items-center justify-between"
+            >
+              <div class="flex items-center gap-3">
+                <img src="./img/logo-mercy.png" class="w-8 h-8" alt="logo-mercy" />
+                <p class="text-grayscale-100 paragraph-medium-caption">Mercedes-Benz</p>
+              </div>
+              <span
+                class="bg-[#F74A4A]/10 p-1 rounded-lg text-[#F74A4A] paragraph-medium-caption flex"
+              >
+                <img src="./img//icons/arrow-top.svg" class="mr-1" />
+                12%
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>

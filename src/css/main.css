@@ -1,3 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,
+body {
+  margin: 0px;
+  height: 100%;
+  font-family: "Manrope", sans-serif;
+}
+
+/* Heading Bold */
+.heading-bold-1 {
+  @apply font-bold text-[72px] leading-[160%];
+}
+.heading-bold-2 {
+  @apply font-bold text-[64px] leading-[160%];
+}
+.heading-bold-3 {
+  @apply font-bold text-[56px] leading-[160%];
+}
+.heading-bold-4 {
+  @apply font-bold text-[48px] leading-[160%];
+}
+.heading-bold-5 {
+  @apply font-bold text-[32px] leading-[160%];
+}
+.heading-bold-6 {
+  @apply font-bold text-[24px] leading-[160%];
+}
+.heading-bold-7 {
+  @apply font-bold text-[20px] leading-[160%];
+}
+
+/* Heading Semibold */
+.heading-bold-1 {
+  @apply font-semibold text-[72px] leading-[160%];
+}
+.heading-semibold-2 {
+  @apply font-semibold text-[64px] leading-[160%];
+}
+.heading-semibold-3 {
+  @apply font-semibold text-[56px] leading-[160%];
+}
+.heading-semibold-4 {
+  @apply font-semibold text-[48px] leading-[160%];
+}
+.heading-semibold-5 {
+  @apply font-semibold text-[32px] leading-[160%];
+}
+.heading-semibold-6 {
+  @apply font-semibold text-[24px] leading-[160%];
+}
+.heading-semibold-7 {
+  @apply font-semibold text-[20px] leading-[160%];
+}
+
+/* Heading Reguler */
+.heading-reguler-1 {
+  @apply text-[72px] leading-[160%];
+}
+.heading-reguler-2 {
+  @apply text-[64px] leading-[160%];
+}
+.heading-reguler-3 {
+  @apply text-[56px] leading-[160%];
+}
+.heading-reguler-4 {
+  @apply text-[48px] leading-[160%];
+}
+.heading-reguler-5 {
+  @apply text-[32px] leading-[160%];
+}
+.heading-reguler-6 {
+  @apply text-[24px] leading-[160%];
+}
+.heading-reguler-7 {
+  @apply text-[20px] leading-[160%];
+}
+
+/* Paragraph Bold Body */
+.paragraph-bold-body {
+  @apply text-[16px] font-bold;
+}
+.paragraph-bold-caption {
+  @apply text-[14px] font-bold;
+}
+.paragraph-bold-label {
+  @apply text-[12px] font-bold;
+}
+
+/* Paragraph Semibold Body */
+.paragraph-semibold-body {
+  @apply text-[16px] font-semibold;
+}
+.paragraph-semibold-caption {
+  @apply text-[14px] font-semibold;
+}
+.paragraph-semibold-label {
+  @apply text-[12px] font-semibold;
+}
+
+/* Paragraph Medium Body */
+.paragraph-medium-body {
+  @apply text-[16px] font-medium;
+}
+.paragraph-medium-caption {
+  @apply text-[14px] font-medium;
+}
+.paragraph-medium-label {
+  @apply text-[12px] font-medium;
+}
+
+/* Paragraph Reguler Body */
+.paragraph-reguler-body {
+  @apply text-[16px];
+}
+.paragraph-reguler-caption {
+  @apply text-[14px];
+}
+.paragraph-reguler-label {
+  @apply text-[12px];
+}
+
+#bg-rhino {
+  background: url(/src/img/bg-rhino.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.menu-active{
+  @apply bg-white !text-primary-purple
+}
+
+.animate-ease{
+  @apply ease-in-out duration-200
+}
