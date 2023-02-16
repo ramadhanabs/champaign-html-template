@@ -11,11 +11,11 @@
   </head>
 
   <body class="bg-primary-purple">
-    <sidebar class="fixed left-0 top-0 w-[260px] h-full px-[24px] py-[40px]">
+    <sidebar class="fixed left-0 top-0 h-full px-[24px] py-[40px] expanded-sidebar">
       <div class="h-full flex flex-col">
-        <div class="flex justify-between items-center">
+        <div class="flex justify-between items-center relative">
           <img src="/src/img/logo/logo-champaign.svg" alt="logo-champaign" />
-          <button>
+          <button id="toggle-sidebar" onclick="handleSidebar()">
             <img src="/src/img/icons/chevron-right.svg" class="w-8 h-8" alt="chevron-right" />
           </button>
         </div>
@@ -23,65 +23,62 @@
         <div>
           <a class="p-4 flex items-center cursor-pointer gap-4 menu-active rounded-xl" href="/">
             <img src="./img/icons/home-purple.svg" />
-            <p class="paragraph-semibold-caption">Home</p>
+            <p class="paragraph-semibold-caption sidebar-menu">Home</p>
           </a>
           <a
             class="p-4 flex items-center cursor-pointer gap-4 hover:bg-purple-600 animate-ease rounded-xl"
             href="/ai-reports"
           >
             <img src="./img/icons/rocket-white.svg" />
-            <p class="paragraph-semibold-caption text-white">Ai Reports</p>
+            <p class="paragraph-semibold-caption text-white sidebar-menu">Ai Reports</p>
           </a>
           <a
             class="p-4 flex items-center cursor-pointer gap-4 hover:bg-purple-600 animate-ease rounded-xl"
             href="/performance"
           >
             <img src="./img/icons/chart-white.svg" />
-            <p class="paragraph-semibold-caption text-white">Performance</p>
+            <p class="paragraph-semibold-caption text-white sidebar-menu">Performance</p>
           </a>
           <a
             class="p-4 flex items-center cursor-pointer gap-4 hover:bg-purple-600 animate-ease rounded-xl"
             href="/clients"
           >
             <img src="./img/icons/user-white.svg" />
-            <p class="paragraph-semibold-caption text-white">Clients</p>
+            <p class="paragraph-semibold-caption text-white sidebar-menu">Clients</p>
           </a>
           <a
             class="p-4 flex items-center cursor-pointer gap-4 hover:bg-purple-600 animate-ease rounded-xl"
             href="/integrations"
           >
             <img src="./img/icons/integration-white.svg" />
-            <p class="paragraph-semibold-caption text-white">Integrations</p>
+            <p class="paragraph-semibold-caption text-white sidebar-menu">Integrations</p>
           </a>
           <a
             class="p-4 flex items-center cursor-pointer gap-4 hover:bg-purple-600 animate-ease rounded-xl"
             href="/tracking"
           >
             <img src="./img/icons/tracking-white.svg" />
-            <p class="paragraph-semibold-caption text-white">Tracking</p>
+            <p class="paragraph-semibold-caption text-white sidebar-menu">Tracking</p>
           </a>
         </div>
         <div class="mt-auto">
           <a class="p-4 flex items-center cursor-pointer gap-4 rounded-xl" href="/my-account">
             <img src="./img/dummy-user.png" class="w-6 h-6" />
-            <p class="paragraph-semibold-caption text-white">My Account</p>
+            <p class="paragraph-semibold-caption text-white sidebar-menu">My Account</p>
           </a>
-           <a
+          <a
             class="p-4 flex items-center cursor-pointer gap-4 hover:bg-purple-600 animate-ease rounded-xl"
             href="#"
           >
             <img src="./img/icons/settings-white.svg" />
-            <p class="paragraph-semibold-caption text-white">Log Out</p>
+            <p class="paragraph-semibold-caption text-white sidebar-menu">Log Out</p>
           </a>
         </div>
       </div>
     </sidebar>
 
-    <main class="ml-[260px] p-6 h-full">
-      <section
-        class="bg-white max-w-[1440px] rounded-[22px] h-full py-6 px-10 flex flex-col"
-        id="bg-rhino"
-      >
+    <main class="collapsed-content p-6 h-full">
+      <section class="bg-white w-full rounded-[22px] h-full py-6 px-10 flex flex-col" id="bg-rhino">
         <div>
           <!-- Title -->
           <div class="flex justify-between items-center mb-8">
@@ -201,5 +198,30 @@
         </div>
       </section>
     </main>
+    <script type="text/javascript">
+      const handleSidebar = () => {
+        const sidebar = document.getElementsByTagName("sidebar")[0]
+        const content = document.getElementsByTagName("main")[0]
+        const hasExpanded = sidebar.classList.contains("expanded-sidebar")
+        const hasCollapsed = sidebar.classList.contains("collapsed-sidebar")
+
+        console.log(hasExpanded, hasCollapsed)
+
+        if (hasExpanded) {
+          sidebar.classList.remove("expanded-sidebar")
+          sidebar.classList.add("collapsed-sidebar")
+
+          content.classList.remove("collapsed-content")
+          content.classList.add("expanded-content")
+        }
+        if (hasCollapsed) {
+          sidebar.classList.remove("collapsed-sidebar")
+          sidebar.classList.add("expanded-sidebar")
+
+          content.classList.remove("expanded-content")
+          content.classList.add("collapsed-content")
+        }
+      }
+    </script>
   </body>
 </html>

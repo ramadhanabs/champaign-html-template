@@ -137,3 +137,31 @@ body {
 .animate-ease{
   @apply ease-in-out duration-200
 }
+
+.collapsed-sidebar{
+  @apply w-[110px]
+}
+
+.expanded-sidebar{
+  @apply w-[260px]
+}
+
+.collapsed-sidebar .sidebar-menu{
+  @apply hidden
+}
+
+.collapsed-sidebar #toggle-sidebar{
+  @apply absolute right-[-65px]
+}
+
+.collapsed-sidebar a{
+  @apply justify-center
+}
+
+.expanded-content {
+  @apply ml-[110px]
+}
+
+.collapsed-content {
+  @apply ml-[260px]
+}
