@@ -130,38 +130,78 @@ body {
   background-position: center;
 }
 
-.menu-active{
-  @apply bg-white !text-primary-purple
+#bg-welcome {
+  background: url(/src/img/bg-welcome.png);
+  background-size: cover;
+  background-position: center;
 }
 
-.animate-ease{
-  @apply ease-in-out duration-200
+.menu-active {
+  @apply bg-white !text-primary-purple;
 }
 
-.collapsed-sidebar{
-  @apply w-[110px]
+.animate-ease {
+  @apply ease-in-out duration-200;
 }
 
-.expanded-sidebar{
-  @apply w-[260px]
+.collapsed-sidebar {
+  @apply w-[110px];
 }
 
-.collapsed-sidebar .sidebar-menu{
-  @apply hidden
+.expanded-sidebar {
+  @apply w-[260px];
 }
 
-.collapsed-sidebar #toggle-sidebar{
-  @apply absolute right-[-65px]
+.collapsed-sidebar .sidebar-menu {
+  @apply hidden;
 }
 
-.collapsed-sidebar a{
-  @apply justify-center
+.collapsed-sidebar #toggle-sidebar {
+  @apply absolute right-[-65px];
+}
+
+.collapsed-sidebar a {
+  @apply justify-center;
 }
 
 .expanded-content {
-  @apply ml-[110px]
+  @apply ml-[110px];
 }
 
 .collapsed-content {
-  @apply ml-[260px]
+  @apply ml-[260px];
+}
+
+.input {
+  @apply border border-grayscale-50 px-5 py-3 rounded-xl focus:outline-primary-purple;
+}
+
+.input-with-button{
+  @apply focus-within:border-primary-purple focus-within:border-2
+}
+
+.field-otp{
+  @apply border-b-2 border-grayscale-50 outline-none p-4 text-[32px] text-center font-bold ease-in-out duration-300
+}
+
+::placeholder {
+  @apply text-grayscale-50 paragraph-reguler-caption;
+}
+:-ms-input-placeholder {
+  @apply text-grayscale-50 paragraph-reguler-caption;
+}
+::-ms-input-placeholder {
+  @apply text-grayscale-50 paragraph-reguler-caption;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

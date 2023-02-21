@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Setup Profile</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body class="bg-light-purple h-screen">
+    <div class="flex items-center justify-center h-full">
+      <div class="bg-white w-[490px] rounded-xl py-10 px-6">
+        <div class="grid grid-cols-4 gap-3 mb-8">
+          <div class="rounded-full bg-primary-purple w-full" style="height: 8px"></div>
+          <div class="rounded-full bg-primary-purple w-full" style="height: 8px"></div>
+          <div class="rounded-full bg-primary-purple w-full" style="height: 8px"></div>
+          <div class="rounded-full bg-grayscale-30 w-full" style="height: 8px"></div>
+        </div>
+        <div class="mb-6">
+          <p class="heading-bold-5 mb-2">Fill In Your Profile</p>
+        </div>
+        <div class="mb-6 flex items-center gap-4">
+          <input type="file" class="hidden" id="input-file" />
+          <button
+            onclick="handleClickFile()"
+            class="rounded-full bg-white border p-4 border-grayscale-50 flex items-center justify-center"
+          >
+            <img src="./img/icons/camera.svg" class="w-6 h-6" alt="icon-camera" />
+          </button>
+          <div class="flex flex-col gap-2">
+            <p class="paragraph-semibold-body">Upload Image</p>
+            <p class="paragraph-reguler-label text-grayscale-60">Max. Size 2 Mb</p>
+          </div>
+        </div>
+        <div class="mb-8">
+          <div class="flex flex-col gap-2 mb-4">
+            <label for="firstname" class="paragraph-medium-body text-grayscale-90"
+              >First Name</label
+            >
+            <input id="firstname" placeholder="Input Your First Name" class="input" />
+          </div>
+          <div class="flex flex-col gap-2 mb-8">
+            <label for="lastname" class="paragraph-medium-body text-grayscale-90">Last Name</label>
+            <input id="lastname" placeholder="Input Your Last Name" class="input" />
+          </div>
+        </div>
+        <button class="w-full p-4 bg-primary-purple rounded-full text-white font-bold mb-4">
+          Continue
+        </button>
+        <button
+          class="w-full p-4 border border-primary-purple rounded-full text-primary-purple font-bold"
+        >
+          Back
+        </button>
+      </div>
+    </div>
+    <script type="text/javascript">
+      const handleClickFile = () => {
+        const inputFile = document.getElementById("input-file")
+        inputFile.click()
+      }
+    </script>
+  </body>
+</html>

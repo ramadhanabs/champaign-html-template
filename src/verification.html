@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Verification</title>
+
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body class="bg-light-purple h-screen">
+    <div class="flex items-center justify-center h-full">
+      <div class="bg-white w-[490px] rounded-xl py-10 px-6">
+        <div class="grid grid-cols-4 gap-3 mb-8">
+          <div class="rounded-full bg-primary-purple w-full" style="height: 8px"></div>
+          <div class="rounded-full bg-grayscale-30 w-full" style="height: 8px"></div>
+          <div class="rounded-full bg-grayscale-30 w-full" style="height: 8px"></div>
+          <div class="rounded-full bg-grayscale-30 w-full" style="height: 8px"></div>
+        </div>
+        <div class="mb-6">
+          <p class="heading-bold-5 mb-2">Verification</p>
+          <p class="paragraph-reguler-body text-grayscale-70">Enter you details to continue</p>
+        </div>
+        <div class="mb-8">
+          <form class="grid grid-cols-4 gap-4 mb-4">
+            <input id="otp-1" type="number" maxlength="1" class="field-otp" />
+            <input id="otp-2" type="number" maxlength="1" class="field-otp" />
+            <input id="otp-3" type="number" maxlength="1" class="field-otp" />
+            <input id="otp-4" type="number" maxlength="1" class="field-otp" />
+          </form>
+          <p class="paragraph-semibold-caption text-grayscale-80">Didn't Receive The Code? <a href="#" class="text-primary-purple">Resend Code</a></p>
+        </div>
+        <button class="w-full p-4 bg-primary-purple rounded-full text-white font-bold mb-4">
+          Continue
+        </button>
+        <button
+          class="w-full p-4 border border-primary-purple rounded-full text-primary-purple font-bold mb-6"
+        >
+          Back
+        </button>
+      </div>
+    </div>
+    <script lang="text/javascript">
+      const handleKeyDown = (event) => {
+        const element = event.target
+        const currentId = element.id
+        const nextElement = element.nextElementSibling
+        const previousElement = element.previousElementSibling
+
+        if(element.value.length > 1){
+          element.value = element.value.substring(0,1)
+        }
+
+        if(element && element.value){
+          element.classList.add('!border-primary-purple')
+          nextElement.focus()
+        } else {
+           element.classList.remove('!border-primary-purple')
+        }
+
+        if(event.inputType === 'deleteContentBackward'){
+          previousElement.focus()
+        }
+      }
+
+      document.addEventListener('input', handleKeyDown);
+    </script>
+  </body>
+</html>
