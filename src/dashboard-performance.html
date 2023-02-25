@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Homepage</title>
+
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body class="bg-primary-purple">
+    <sidebar class="fixed left-0 top-0 h-full px-[24px] py-[40px] expanded-sidebar">
+      <div class="h-full flex flex-col">
+        <div class="flex justify-between items-center relative">
+          <img src="/src/img/logo/logo-champaign.svg" alt="logo-champaign" />
+          <button id="toggle-sidebar" onclick="handleSidebar()">
+            <img src="/src/img/icons/chevron-right.svg" class="w-8 h-8" alt="chevron-right" />
+          </button>
+        </div>
+        <hr class="my-6 opacity-50" />
+        <div>
+          <a class="p-4 flex items-center cursor-pointer gap-4 rounded-xl" href="/">
+            <img src="./img/icons/home-white.svg" />
+            <p class="paragraph-semibold-caption sidebar-menu text-white">Home</p>
+          </a>
+          <a
+            class="p-4 flex items-center cursor-pointer gap-4 hover:bg-purple-600 animate-ease rounded-xl"
+            href="/ai-reports"
+          >
+            <img src="./img/icons/rocket-white.svg" />
+            <p class="paragraph-semibold-caption text-white sidebar-menu">Ai Reports</p>
+          </a>
+          <a
+            class="p-4 flex items-center cursor-pointer gap-4 hover:bg-purple-600 animate-ease rounded-xl menu-active"
+            href="/performance"
+          >
+            <img src="./img/icons/chart-purple.svg" />
+            <p class="paragraph-semibold-caption sidebar-menu">Performance</p>
+          </a>
+          <a
+            class="p-4 flex items-center cursor-pointer gap-4 hover:bg-purple-600 animate-ease rounded-xl"
+            href="/clients"
+          >
+            <img src="./img/icons/user-white.svg" />
+            <p class="paragraph-semibold-caption text-white sidebar-menu">Clients</p>
+          </a>
+          <a
+            class="p-4 flex items-center cursor-pointer gap-4 hover:bg-purple-600 animate-ease rounded-xl"
+            href="/integrations"
+          >
+            <img src="./img/icons/integration-white.svg" />
+            <p class="paragraph-semibold-caption text-white sidebar-menu">Integrations</p>
+          </a>
+          <a
+            class="p-4 flex items-center cursor-pointer gap-4 hover:bg-purple-600 animate-ease rounded-xl"
+            href="/tracking"
+          >
+            <img src="./img/icons/tracking-white.svg" />
+            <p class="paragraph-semibold-caption text-white sidebar-menu">Tracking</p>
+          </a>
+        </div>
+        <div class="mt-auto">
+          <a class="p-4 flex items-center cursor-pointer gap-4 rounded-xl" href="/my-account">
+            <img src="./img/dummy-user.png" class="w-6 h-6" />
+            <p class="paragraph-semibold-caption text-white sidebar-menu">My Account</p>
+          </a>
+          <a
+            class="p-4 flex items-center cursor-pointer gap-4 hover:bg-purple-600 animate-ease rounded-xl"
+            href="#"
+          >
+            <img src="./img/icons/settings-white.svg" />
+            <p class="paragraph-semibold-caption text-white sidebar-menu">Log Out</p>
+          </a>
+        </div>
+      </div>
+    </sidebar>
+
+    <main class="collapsed-content p-6 h-full">
+      <section class="bg-white w-full rounded-[22px] h-full py-6 px-10 flex flex-col" id="bg-rhino">
+        <div>
+          <!-- Title -->
+          <div class="flex justify-between items-center mb-8">
+            <a class="paragraph-reguler-caption text-grayscale-80"
+              >Performance <strong class="text-primary-purple">/ Client Summary</strong></a
+            >
+            <img src="/src/img/logo/logo-champaign.png" alt="logo-champaign" class="w-[120px]" />
+          </div>
+
+          <!-- Revenue This Month -->
+          <div class="mb-6">
+            <p class="heading-bold-5 mb-6">Overview</p>
+            <p class="heading-bold-7 mb-6">This Month</p>
+            <div class="grid grid-cols-3 gap-6">
+              <!-- Card 1 -->
+              <div class="p-4 bg-white/50 backdrop-blur rounded-xl flex gap-4">
+                <img src="./img/icons/dollar-circle.svg" alt="dollar-circle" />
+                <div>
+                  <p class="heading-reguler-6 text-grayscale-90">Revenue</p>
+                  <p class="heading-bold-7 text-grayscale-100">$96.000</p>
+                </div>
+              </div>
+              <!-- Card 2 -->
+              <div class="p-4 bg-white/50 backdrop-blur rounded-xl flex gap-4">
+                <img src="./img/icons/wallet-circle.svg" alt="wallet-circle" />
+                <div>
+                  <p class="heading-reguler-6 text-grayscale-90">Budget</p>
+                  <p class="heading-bold-7 text-grayscale-100">$96.000</p>
+                </div>
+              </div>
+              <!-- Card 3 -->
+              <div class="p-4 bg-white/50 backdrop-blur rounded-xl flex gap-4">
+                <img src="./img/icons/chart-circle.svg" alt="chart-circle" />
+                <div>
+                  <p class="heading-reguler-6 text-grayscale-90">Projected</p>
+                  <p class="heading-bold-7 text-grayscale-100">$195.000</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="text/javascript">
+      const handleSidebar = () => {
+        const sidebar = document.getElementsByTagName("sidebar")[0]
+        const content = document.getElementsByTagName("main")[0]
+        const hasExpanded = sidebar.classList.contains("expanded-sidebar")
+        const hasCollapsed = sidebar.classList.contains("collapsed-sidebar")
+
+        console.log(hasExpanded, hasCollapsed)
+
+        if (hasExpanded) {
+          sidebar.classList.remove("expanded-sidebar")
+          sidebar.classList.add("collapsed-sidebar")
+
+          content.classList.remove("collapsed-content")
+          content.classList.add("expanded-content")
+        }
+        if (hasCollapsed) {
+          sidebar.classList.remove("collapsed-sidebar")
+          sidebar.classList.add("expanded-sidebar")
+
+          content.classList.remove("expanded-content")
+          content.classList.add("collapsed-content")
+        }
+      }
+    </script>
+  </body>
+</html>
