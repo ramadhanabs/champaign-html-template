@@ -11,7 +11,7 @@
   </head>
   <body class="bg-light-purple h-screen">
     <div class="flex items-center justify-center h-full">
-      <div class="bg-white w-[490px] rounded-xl py-10 px-6">
+      <div class="bg-white w-[490px] h-[685px] rounded-xl py-10 px-6">
         <div class="grid grid-cols-4 gap-3 mb-8">
           <div class="rounded-full bg-primary-purple w-full" style="height: 8px"></div>
           <div class="rounded-full bg-grayscale-30 w-full" style="height: 8px"></div>
@@ -20,7 +20,9 @@
         </div>
         <div class="mb-6">
           <p class="heading-bold-5 mb-2">Verification</p>
-          <p class="paragraph-reguler-body text-grayscale-70">Enter you details to continue</p>
+          <p class="paragraph-reguler-body text-grayscale-70">
+            Please enter the code we have just emailed to you
+          </p>
         </div>
         <div class="mb-8">
           <form class="grid grid-cols-4 gap-4 mb-4">
@@ -29,16 +31,22 @@
             <input id="otp-3" type="number" maxlength="1" class="field-otp" />
             <input id="otp-4" type="number" maxlength="1" class="field-otp" />
           </form>
-          <p class="paragraph-semibold-caption text-grayscale-80">Didn't Receive The Code? <a href="#" class="text-primary-purple">Resend Code</a></p>
+          <p class="paragraph-semibold-caption text-grayscale-80">
+            Didn't receive the code? <a href="#" class="text-primary-purple">Resend Code</a>
+          </p>
         </div>
-        <button class="w-full p-4 bg-primary-purple rounded-full text-white font-bold mb-4">
+        <a
+          class="w-full p-4 bg-primary-purple rounded-full text-white font-bold mb-6 block text-center"
+          href="./create-password.html"
+        >
           Continue
-        </button>
-        <button
-          class="w-full p-4 border border-primary-purple rounded-full text-primary-purple font-bold mb-6"
+        </a>
+        <a
+          class="w-full p-4 border border-primary-purple rounded-full text-primary-purple font-bold mb-6 block text-center"
+          href="./login.html"
         >
           Back
-        </button>
+        </a>
       </div>
     </div>
     <script lang="text/javascript">

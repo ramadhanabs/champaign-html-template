@@ -136,6 +136,19 @@ body {
   background-position: center;
 }
 
+#bg-success {
+  background: url(/src/img/bg-success.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-get-started {
+  background: url(/src/img/bg-login.png);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+
 .menu-active {
   @apply bg-white !text-primary-purple;
 }
