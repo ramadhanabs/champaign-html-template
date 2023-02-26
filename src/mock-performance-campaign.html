@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Dashboard Performance - Campaign</title>
+
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body class="bg-primary-purple">
+    <sidebar class="fixed left-0 top-0 h-full px-[24px] py-[40px] expanded-sidebar">
+      <div class="h-full flex flex-col">
+        <div class="flex justify-between items-center relative">
+          <img src="/src/img/logo/logo-champaign.svg" alt="logo-champaign" />
+          <button id="toggle-sidebar" onclick="handleSidebar()">
+            <img src="/src/img/icons/chevron-right.svg" class="w-8 h-8" alt="chevron-right" />
+          </button>
+        </div>
+        <hr class="my-6 opacity-50" />
+        <div>
+          <a class="p-4 flex items-center cursor-pointer gap-4 rounded-xl" href="/">
+            <img src="./img/icons/home-white.svg" />
+            <p class="paragraph-semibold-caption sidebar-menu text-white">Home</p>
+          </a>
+          <a
+            class="p-4 flex items-center cursor-pointer gap-4 hover:bg-purple-600 animate-ease rounded-xl"
+            href="/ai-reports"
+          >
+            <img src="./img/icons/rocket-white.svg" />
+            <p class="paragraph-semibold-caption text-white sidebar-menu">Ai Reports</p>
+          </a>
+          <a
+            class="p-4 flex items-center cursor-pointer gap-4 hover:bg-purple-600 animate-ease rounded-xl menu-active"
+            href="/performance"
+          >
+            <img src="./img/icons/chart-purple.svg" />
+            <p class="paragraph-semibold-caption sidebar-menu">Performance</p>
+          </a>
+          <a
+            class="p-4 flex items-center cursor-pointer gap-4 hover:bg-purple-600 animate-ease rounded-xl"
+            href="/clients"
+          >
+            <img src="./img/icons/user-white.svg" />
+            <p class="paragraph-semibold-caption text-white sidebar-menu">Clients</p>
+          </a>
+          <a
+            class="p-4 flex items-center cursor-pointer gap-4 hover:bg-purple-600 animate-ease rounded-xl"
+            href="/integrations"
+          >
+            <img src="./img/icons/integration-white.svg" />
+            <p class="paragraph-semibold-caption text-white sidebar-menu">Integrations</p>
+          </a>
+          <a
+            class="p-4 flex items-center cursor-pointer gap-4 hover:bg-purple-600 animate-ease rounded-xl"
+            href="/tracking"
+          >
+            <img src="./img/icons/tracking-white.svg" />
+            <p class="paragraph-semibold-caption text-white sidebar-menu">Tracking</p>
+          </a>
+        </div>
+        <div class="mt-auto">
+          <a class="p-4 flex items-center cursor-pointer gap-4 rounded-xl" href="/my-account">
+            <img src="./img/dummy-user.png" class="w-6 h-6" />
+            <p class="paragraph-semibold-caption text-white sidebar-menu">My Account</p>
+          </a>
+          <a
+            class="p-4 flex items-center cursor-pointer gap-4 hover:bg-purple-600 animate-ease rounded-xl"
+            href="#"
+          >
+            <img src="./img/icons/settings-white.svg" />
+            <p class="paragraph-semibold-caption text-white sidebar-menu">Log Out</p>
+          </a>
+        </div>
+      </div>
+    </sidebar>
+
+    <main class="collapsed-content p-6 h-full">
+      <section
+        class="bg-light-purple w-full rounded-[22px] h-full py-4 px-6 flex flex-col overflow-scroll"
+      >
+        <div>
+          <!-- Title -->
+          <div class="flex justify-between items-center mb-8">
+            <a class="paragraph-reguler-caption text-grayscale-80"
+              >Mock Client <strong class="text-primary-purple">/ Performance</strong></a
+            >
+            <img src="/src/img/logo/logo-champaign.png" alt="logo-champaign" class="w-[120px]" />
+          </div>
+          <p class="heading-bold-7 mb-6">Performance</p>
+
+          <table class="w-full rounded-lg">
+            <thead class="bg-primary-purple text-white">
+              <tr>
+                <td>Name</td>
+                <td align="center">Imp</td>
+                <td align="center">Clicks</td>
+                <td align="center">% Rate Click</td>
+                <td align="center">% Cost Click</td>
+                <td align="center">Conv</td>
+                <td align="center">% Rate Conv</td>
+                <td align="center">% Cost Conv</td>
+                <td align="center">Spend</td>
+                <td align="center">% Value All Conv</td>
+                <td align="center">ROAS</td>
+                <td align="center">Projected Spend</td>
+              </tr>
+            </thead>
+            <tbody class="bg-white">
+              <tr data-row="row-1" data-expand="false">
+                <td class="flex items-center gap-3">
+                  <button
+                    onclick="handleClickDropdown('row-1')"
+                    class="chevron-down w-4 h-4"
+                  ></button>
+                  Campaign Strategy
+                </td>
+                <td align="center">12218</td>
+                <td align="center">14224</td>
+                <td align="center">15.28</td>
+                <td align="center">$0.10</td>
+                <td align="center">6</td>
+                <td align="center">0.32</td>
+                <td align="center">$30.74</td>
+                <td align="center" class="bg-[#76FFBF]">$128.24</td>
+                <td align="center">$2.251.00</td>
+                <td align="center">12:4:1</td>
+                <td align="center" class="bg-[#76FFBF]">$128.24</td>
+              </tr>
+              <tr class="hidden" data-parent="row-1" data-row="children-1-1">
+                <td class="flex items-center gap-2">
+                  <button
+                    onclick="handleClickDropdown('children-1-1')"
+                    class="plus-circle-green w-4 h-4"
+                    id="dropdown-child"
+                  ></button>
+                  <img src="./img/icons/instagram.svg" width="16px" alt="" />
+                  TOF Instagram
+                </td>
+                <td align="center">12218</td>
+                <td align="center">14224</td>
+                <td align="center">15.28</td>
+                <td align="center">$0.10</td>
+                <td align="center">6</td>
+                <td align="center">0.32</td>
+                <td align="center">$30.74</td>
+                <td align="center">$128.24</td>
+                <td align="center">$2.251.00</td>
+                <td align="center">12:4:1</td>
+                <td align="center">$128.24</td>
+              </tr>
+              <tr class="hidden bg-grayscale-20" data-parent="children-1-1">
+                <td class="flex items-center gap-2">Fishery</td>
+                <td align="center">12218</td>
+                <td align="center">14224</td>
+                <td align="center">15.28</td>
+                <td align="center">$0.10</td>
+                <td align="center">6</td>
+                <td align="center">0.32</td>
+                <td align="center">$30.74</td>
+                <td align="center">$128.24</td>
+                <td align="center">$2.251.00</td>
+                <td align="center">12:4:1</td>
+                <td align="center">$128.24</td>
+              </tr>
+              <tr class="hidden bg-grayscale-20" data-parent="children-1-1">
+                <td class="flex items-center gap-2">Fruity</td>
+                <td align="center">12218</td>
+                <td align="center">14224</td>
+                <td align="center">15.28</td>
+                <td align="center">$0.10</td>
+                <td align="center">6</td>
+                <td align="center">0.32</td>
+                <td align="center">$30.74</td>
+                <td align="center">$128.24</td>
+                <td align="center">$2.251.00</td>
+                <td align="center">12:4:1</td>
+                <td align="center">$128.24</td>
+              </tr>
+
+              <tr class="hidden" data-parent="row-1" data-row="children-1-2">
+                <td class="flex items-center gap-2">
+                  <button
+                    onclick="handleClickDropdown('children-1-2')"
+                    class="plus-circle-green w-4 h-4"
+                    id="dropdown-child"
+                  ></button>
+                  <img src="./img/icons/facebook.svg" width="16px" alt="" />
+                  TOF Facebook
+                </td>
+                <td align="center">12218</td>
+                <td align="center">14224</td>
+                <td align="center">15.28</td>
+                <td align="center">$0.10</td>
+                <td align="center">6</td>
+                <td align="center">0.32</td>
+                <td align="center">$30.74</td>
+                <td align="center">$128.24</td>
+                <td align="center">$2.251.00</td>
+                <td align="center">12:4:1</td>
+                <td align="center">$128.24</td>
+              </tr>
+              <tr class="hidden bg-grayscale-20" data-parent="children-1-2">
+                <td class="flex items-center gap-2">Mine and Coal</td>
+                <td align="center">12218</td>
+                <td align="center">14224</td>
+                <td align="center">15.28</td>
+                <td align="center">$0.10</td>
+                <td align="center">6</td>
+                <td align="center">0.32</td>
+                <td align="center">$30.74</td>
+                <td align="center">$128.24</td>
+                <td align="center">$2.251.00</td>
+                <td align="center">12:4:1</td>
+                <td align="center">$128.24</td>
+              </tr>
+              <tr class="hidden bg-grayscale-20" data-parent="children-1-2">
+                <td class="flex items-center gap-2">Fishery</td>
+                <td align="center">12218</td>
+                <td align="center">14224</td>
+                <td align="center">15.28</td>
+                <td align="center">$0.10</td>
+                <td align="center">6</td>
+                <td align="center">0.32</td>
+                <td align="center">$30.74</td>
+                <td align="center">$128.24</td>
+                <td align="center">$2.251.00</td>
+                <td align="center">12:4:1</td>
+                <td align="center">$128.24</td>
+              </tr>
+
+              <tr data-row="row-2" data-expand="false">
+                <td class="flex items-center gap-3">
+                  <button
+                    onclick="handleClickDropdown('row-2')"
+                    class="chevron-down w-4 h-4"
+                  ></button>
+                  Campaign Strategy
+                </td>
+                <td align="center">12218</td>
+                <td align="center">14224</td>
+                <td align="center">15.28</td>
+                <td align="center">$0.10</td>
+                <td align="center">6</td>
+                <td align="center">0.32</td>
+                <td align="center">$30.74</td>
+                <td align="center">$128.24</td>
+                <td align="center">$2.251.00</td>
+                <td align="center">12:4:1</td>
+                <td align="center">$128.24</td>
+              </tr>
+              <tr class="hidden" data-parent="row-2" data-row="children-2-1">
+                <td class="flex items-center gap-2">
+                  <button
+                    onclick="handleClickDropdown('children-2-1')"
+                    class="plus-circle-green w-4 h-4"
+                    id="dropdown-child"
+                  ></button>
+                  <img src="./img/icons/instagram.svg" width="16px" alt="" />
+                  TOF Instagram
+                </td>
+                <td align="center">12218</td>
+                <td align="center">14224</td>
+                <td align="center">15.28</td>
+                <td align="center">$0.10</td>
+                <td align="center">6</td>
+                <td align="center">0.32</td>
+                <td align="center">$30.74</td>
+                <td align="center">$128.24</td>
+                <td align="center">$2.251.00</td>
+                <td align="center">12:4:1</td>
+                <td align="center">$128.24</td>
+              </tr>
+              <tr class="hidden bg-grayscale-20" data-parent="children-2-1">
+                <td class="flex items-center gap-2">Fishery</td>
+                <td align="center">12218</td>
+                <td align="center">14224</td>
+                <td align="center">15.28</td>
+                <td align="center">$0.10</td>
+                <td align="center">6</td>
+                <td align="center">0.32</td>
+                <td align="center">$30.74</td>
+                <td align="center">$128.24</td>
+                <td align="center">$2.251.00</td>
+                <td align="center">12:4:1</td>
+                <td align="center">$128.24</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script type="text/javascript">
+      const handleSidebar = () => {
+        const sidebar = document.getElementsByTagName("sidebar")[0]
+        const content = document.getElementsByTagName("main")[0]
+        const hasExpanded = sidebar.classList.contains("expanded-sidebar")
+        const hasCollapsed = sidebar.classList.contains("collapsed-sidebar")
+
+        console.log(hasExpanded, hasCollapsed)
+
+        if (hasExpanded) {
+          sidebar.classList.remove("expanded-sidebar")
+          sidebar.classList.add("collapsed-sidebar")
+
+          content.classList.remove("collapsed-content")
+          content.classList.add("expanded-content")
+        }
+        if (hasCollapsed) {
+          sidebar.classList.remove("collapsed-sidebar")
+          sidebar.classList.add("expanded-sidebar")
+
+          content.classList.remove("expanded-content")
+          content.classList.add("collapsed-content")
+        }
+      }
+
+      const handleClickDropdown = id => {
+        const currentElement = document.querySelector(`[data-row="${id}"]`)
+        const isExpanded = currentElement.getAttribute("data-expand") === "true" ? true : false
+        const dataArray = Array.from(document.querySelectorAll(`[data-parent="${id}"]`))
+
+        if (!isExpanded) {
+          dataArray.forEach(node => {
+            node.classList.remove("hidden")
+          })
+          currentElement.setAttribute("data-expand", "true")
+          if (event.target.id === "dropdown-child") {
+            event.target.classList.remove("plus-circle-green")
+            event.target.classList.add("minus-circle-red")
+          }
+        } else {
+          dataArray.forEach(node => {
+            node.classList.add("hidden")
+          })
+          currentElement.setAttribute("data-expand", "false")
+          if (event.target.id === "dropdown-child") {
+            event.target.classList.remove("minus-circle-red")
+            event.target.classList.add("plus-circle-green")
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -218,3 +218,42 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+table td {
+  @apply text-[12px] font-medium ;
+}
+
+table thead td {
+  @apply py-5 px-2
+}
+
+table tbody td {
+  @apply px-2 py-5
+}
+
+table tbody tr {
+  @apply border-b border-[#D1D8DD]
+}
+
+.plus-circle-green {
+  background-image: url(/src/img/icons/plus-circle-green.svg);
+}
+
+.minus-circle-red{
+  background-image: url(/src/img/icons/minus-circle-red.svg);
+}
+
+.chevron-right {
+  background-image: url(/src/img/icons/chevron-right.svg);
+}
+
+.chevron-down {
+  background-image: url(/src/img/icons/chevron-down.svg);
+}
+
+thead td:first-of-type {
+  border-top-left-radius: 8px;
+}
+thead td:last-of-type {
+  border-top-right-radius: 8px;
+}
