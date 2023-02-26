@@ -127,8 +127,27 @@
               </div>
             </div>
           </div>
-          <div class="flex items-center justify-between">
-            <p class="heading-bold-7 mb-6">Data</p>
+          <div class="flex items-center justify-between mb-6">
+            <p class="heading-bold-7">Data</p>
+            <div class="relative">
+              <button
+                class="bg-white px-4 py-2 rounded-lg flex items-center gap-4 paragraph-medium-caption"
+                onclick="handleSelectTime()"
+              >
+                <img src="./img/icons/chevron-down.svg" width="16px" alt="" />
+                Select Time
+              </button>
+              <div
+                id="time-option"
+                class="hidden mt-1 bg-white rounded-lg absolute w-full shadow-md py-4"
+              >
+                <ul class="text-sm">
+                  <li class="py-2 px-4 cursor-pointer hover:bg-slate-100">First</li>
+                  <li class="py-2 px-4 cursor-pointer hover:bg-slate-100">Second</li>
+                  <li class="py-2 px-4 cursor-pointer hover:bg-slate-100">Third</li>
+                </ul>
+              </div>
+            </div>
           </div>
 
           <table class="w-full rounded-lg">
@@ -380,6 +399,15 @@
             event.target.classList.remove("minus-circle-red")
             event.target.classList.add("plus-circle-green")
           }
+        }
+      }
+
+      const handleSelectTime = () => {
+        const element = document.getElementById("time-option")
+        if (element.classList.contains("hidden")) {
+          element.classList.remove("hidden")
+        } else {
+          element.classList.add("hidden")
         }
       }
     </script>
