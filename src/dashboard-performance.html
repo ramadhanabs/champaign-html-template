@@ -14,9 +14,9 @@
     <sidebar class="fixed left-0 top-0 h-full px-[24px] py-[40px] expanded-sidebar">
       <div class="h-full flex flex-col">
         <div class="flex justify-between items-center relative">
-          <img src="/src/img/logo/logo-champaign.svg" alt="logo-champaign" />
+          <img src="/src/img/logo/logo-champaign.svg" alt="logo-champaign" onclick="handleSidebar()" />
           <button id="toggle-sidebar" onclick="handleSidebar()">
-            <img src="/src/img/icons/chevron-right.svg" class="w-8 h-8" alt="chevron-right" />
+            <img src="/src/img/icons/hamburger.svg" class="w-8 h-8" alt="hamburger" />
           </button>
         </div>
         <hr class="my-6 opacity-50" />
@@ -227,21 +227,35 @@
         const hasExpanded = sidebar.classList.contains("expanded-sidebar")
         const hasCollapsed = sidebar.classList.contains("collapsed-sidebar")
 
+        const buttonHamburger = document.getElementById("toggle-sidebar")
+
         console.log(hasExpanded, hasCollapsed)
 
         if (hasExpanded) {
           sidebar.classList.remove("expanded-sidebar")
           sidebar.classList.add("collapsed-sidebar")
 
+          sidebar.classList.remove("justify-between")
+          sidebar.classList.add("justify-center")
+
           content.classList.remove("collapsed-content")
           content.classList.add("expanded-content")
+
+          buttonHamburger.classList.remove("block")
+          buttonHamburger.classList.add("hidden")
         }
         if (hasCollapsed) {
           sidebar.classList.remove("collapsed-sidebar")
           sidebar.classList.add("expanded-sidebar")
 
+          sidebar.classList.remove("justify-center")
+          sidebar.classList.add("justify-between")
+
           content.classList.remove("expanded-content")
           content.classList.add("collapsed-content")
+
+          buttonHamburger.classList.remove("hidden")
+          buttonHamburger.classList.add("block")
         }
       }
     </script>

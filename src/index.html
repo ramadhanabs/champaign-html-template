@@ -14,9 +14,9 @@
     <sidebar class="fixed left-0 top-0 h-full px-[24px] py-[40px] expanded-sidebar">
       <div class="h-full flex flex-col">
         <div class="flex justify-between items-center relative">
-          <img src="/src/img/logo/logo-champaign.svg" alt="logo-champaign" />
+          <img src="/src/img/logo/logo-champaign.svg" alt="logo-champaign" onclick="handleSidebar()" />
           <button id="toggle-sidebar" onclick="handleSidebar()">
-            <img src="/src/img/icons/chevron-right.svg" class="w-8 h-8" alt="chevron-right" />
+            <img src="/src/img/icons/hamburger.svg" class="w-8 h-8" alt="hamburger" />
           </button>
         </div>
         <hr class="my-6 opacity-50" />
@@ -82,26 +82,12 @@
         <div>
           <!-- Title -->
           <div class="flex justify-between items-center mb-8">
-            <h1 class="heading-bold-5 text-grayscale-100">Homepage</h1>
+            <h1 class="heading-bold-5 text-primary-purple">Welcome, User!</h1>
             <img src="/src/img/logo/logo-champaign.png" alt="logo-champaign" class="w-[120px]" />
           </div>
 
-          <!-- Tab -->
-          <div class="flex items-center gap-4 mb-8">
-            <button
-              class="text-primary bg-white p-4 rounded-xl w-[260px] hover:ring-2 hover:ring-primary ease-in-out duration-200"
-            >
-              <p class="heading-bold-7">Ai Reports</p>
-            </button>
-            <button
-              class="text-primary bg-white p-4 rounded-xl w-[260px] hover:ring-2 hover:ring-primary ease-in-out duration-200"
-            >
-              <p class="heading-bold-7">Performance</p>
-            </button>
-          </div>
-
           <!-- Revenue This Month -->
-          <p class="heading-bold-6 mb-6">This Month</p>
+          <p class="heading-bold-7 mb-6">This Month</p>
           <div class="grid grid-cols-3 gap-6">
             <!-- Card 1 -->
             <div class="p-4 bg-white/50 backdrop-blur rounded-xl flex gap-4">
@@ -205,21 +191,35 @@
         const hasExpanded = sidebar.classList.contains("expanded-sidebar")
         const hasCollapsed = sidebar.classList.contains("collapsed-sidebar")
 
+        const buttonHamburger = document.getElementById("toggle-sidebar")
+
         console.log(hasExpanded, hasCollapsed)
 
         if (hasExpanded) {
           sidebar.classList.remove("expanded-sidebar")
           sidebar.classList.add("collapsed-sidebar")
 
+          sidebar.classList.remove("justify-between")
+          sidebar.classList.add("justify-center")
+
           content.classList.remove("collapsed-content")
           content.classList.add("expanded-content")
+
+          buttonHamburger.classList.remove("block")
+          buttonHamburger.classList.add("hidden")
         }
         if (hasCollapsed) {
           sidebar.classList.remove("collapsed-sidebar")
           sidebar.classList.add("expanded-sidebar")
 
+          sidebar.classList.remove("justify-center")
+          sidebar.classList.add("justify-between")
+
           content.classList.remove("expanded-content")
           content.classList.add("collapsed-content")
+
+          buttonHamburger.classList.remove("hidden")
+          buttonHamburger.classList.add("block")
         }
       }
     </script>
