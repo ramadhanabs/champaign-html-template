@@ -11,11 +11,11 @@
   </head>
 
   <body class="bg-primary-purple">
-    <sidebar class="fixed left-0 top-0 h-full px-[24px] py-[40px] expanded-sidebar">
+    <sidebar class="fixed left-0 top-0 h-full px-[24px] py-[40px] collapsed-sidebar">
       <div class="h-full flex flex-col">
         <div class="flex justify-between items-center relative">
           <img src="/src/img/logo/logo-champaign.svg" alt="logo-champaign" onclick="handleSidebar()" />
-          <button id="toggle-sidebar" onclick="handleSidebar()">
+          <button id="toggle-sidebar" onclick="handleSidebar()" class="hidden">
             <img src="/src/img/icons/hamburger.svg" class="w-8 h-8" alt="hamburger" />
           </button>
         </div>
@@ -84,7 +84,7 @@
       </div>
     </sidebar>
 
-    <main class="collapsed-content p-6 h-full">
+    <main class="expanded-content p-6 h-full">
       <section class="bg-white w-full rounded-[22px] h-full py-6 px-10 flex flex-col" id="bg-rhino">
         <div>
           <!-- Title -->
