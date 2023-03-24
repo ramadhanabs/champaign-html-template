@@ -11,29 +11,27 @@
   </head>
 
   <body class="bg-primary-purple">
-    <!-- Mobile Sidebar -->
+     <!-- Mobile Sidebar -->
     <navbar class="flex py-4 px-5 bg-primary-purple md:hidden justify-between">
       <button onclick="handleSidebarMobile()">
         <img src="/src/img/icons/hamburger.svg" class="w-6 h-6" alt="hamburger" />
       </button>
-      <img src="/src/img/logo/logo-champaign-white.png" alt="logo-champaign" class="w-[80px]" />
+      <img src="/src/img/logo/logo-champaign-white-2.png" alt="logo-champaign" class="w-[48px]" />
     </navbar>
 
-    <sidebar
-      id="sidebar-mobile"
-      class="hidden fixed left-0 top-0 h-full px-[24px] py-[40px] bg-primary-purple z-10"
-    >
+    <sidebar id="sidebar-mobile" class="w-full hidden fixed left-0 top-0 h-full px-[24px] py-[40px] bg-primary-purple z-10">
       <div class="h-full flex flex-col">
-        <div class="flex justify-end items-center relative">
+        <div class="flex justify-between items-center relative">
           <button id="toggle-sidebar" onclick="handleSidebarMobile()">
-            <img src="/src/img/icons/exclamation.svg" class="w-5 h-5" />
+            <img src="/src/img/icons/exclamation-2.svg" class="w-8 h-8" />
           </button>
+          <img src="/src/img/logo/logo-champaign-white-2.png" alt="logo-champaign" class="w-[48px]" />
         </div>
         <hr class="my-6 opacity-50" />
         <div>
-          <a class="p-4 flex items-center cursor-pointer gap-4 menu-active rounded-xl" href="/">
-            <img src="./img/icons/home-purple.svg" />
-            <p class="paragraph-semibold-caption sidebar-menu">Home</p>
+          <a class="p-4 flex items-center cursor-pointer hover:bg-purple-600 animate-ease  gap-4 rounded-xl" href="/">
+            <img src="./img/icons/home-white.svg" />
+            <p class="paragraph-semibold-caption sidebar-menu text-white">Home</p>
           </a>
           <a
             class="p-4 flex items-center cursor-pointer gap-4 hover:bg-purple-600 animate-ease rounded-xl"
@@ -43,11 +41,11 @@
             <p class="paragraph-semibold-caption text-white sidebar-menu">Ai Reports</p>
           </a>
           <a
-            class="p-4 flex items-center cursor-pointer gap-4 hover:bg-purple-600 animate-ease rounded-xl"
+            class="p-4 flex items-center cursor-pointer gap-4 rounded-xl menu-active"
             href="./dashboard-performance.html"
           >
-            <img src="./img/icons/chart-white.svg" />
-            <p class="paragraph-semibold-caption text-white sidebar-menu">Performance</p>
+            <img src="./img/icons/chart-purple.svg" />
+            <p class="paragraph-semibold-caption sidebar-menu">Performance</p>
           </a>
           <a
             class="p-4 flex items-center cursor-pointer gap-4 hover:bg-purple-600 animate-ease rounded-xl"
